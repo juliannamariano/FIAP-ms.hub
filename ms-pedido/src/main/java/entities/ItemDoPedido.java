@@ -3,7 +3,7 @@ package entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
+import java.math.BigDecimal;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,18 +11,15 @@ import java.time.LocalDate;
 @Setter
 @EqualsAndHashCode(of = "id")
 @Entity
-@Table(name = "tb_pedido")
-public class Pedido {
+@Table(name = "tb_item_do_pedido")
+public class ItemDoPedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
-    private String cpf;
-    private LocalDate data;
-
-    @Enumerated(EnumType.STRING)
-    private Status status;
+    private Integer quantidade;
+    private String descricao;
+    private BigDecimal valorUnitario;
 
 }
